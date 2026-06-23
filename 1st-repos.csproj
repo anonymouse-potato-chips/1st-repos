@@ -1,10 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <!-- Console app targeting .NET 10 -->
-    <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
-
-    <!-- Convenience settings -->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
