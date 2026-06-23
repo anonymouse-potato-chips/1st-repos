@@ -57,7 +57,45 @@
 </head>
 <body>
   <main class="panel" role="main" aria-label="Greeting">
-    <h1>Hi ^_^</h1>
+    <h1 id="quote"></h1>
   </main>
+
+  <script>
+    /*
+      To set the quotes you want, edit the QUOTES array below. Each entry should be a string.
+      The page will pick one at random on load. Click the heading to get another random quote.
+    */
+    const QUOTES = [
+      "Naveer Giv Up Fren",
+      "Just because I'm trash, doesn't mean I can't do great things. It's called garbage can, not garbage can not"
+    ];
+
+    function pickQuote() {
+      if (!Array.isArray(QUOTES) || QUOTES.length === 0) return 'Hi ^_^';
+      return QUOTES[Math.floor(Math.random() * QUOTES.length)];
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const h1 = document.getElementById('quote');
+      if (!h1) return;
+
+      // Make the heading accessible for announcements
+      h1.setAttribute('aria-live', 'polite');
+      h1.style.cursor = 'pointer';
+
+      const apply = () => {
+        const q = pickQuote();
+        h1.textContent = q;
+        // also update the document title so browser tabs show the quote
+        document.title = q;
+      };
+
+      // initial random quote
+      apply();
+
+      // clicking the heading picks another random quote
+      h1.addEventListener('click', apply);
+    });
+  </script>
 </body>
 </html>
