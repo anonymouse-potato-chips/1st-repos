@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => Results.Ok("Hello from 1st-repo"));
+app.MapGet("/", () => Results.Ok("Naveer Gib Up Fren"));
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
