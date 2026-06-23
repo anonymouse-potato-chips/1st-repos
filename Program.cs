@@ -4,6 +4,6 @@ var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-app.MapGet("/", () => Results.File("index.html", "text/html"));
+app.MapGet("/", () => Results.File("index.html"));
 
 app.Run();
