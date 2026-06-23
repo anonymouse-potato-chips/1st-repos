@@ -1,9 +1,6 @@
-using System;
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello from 1st-repos");
-    }
-}
+app.MapGet("/", () => "Hello from 1st-repos (web)");
+
+app.Run();
