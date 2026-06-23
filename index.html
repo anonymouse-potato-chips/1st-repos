@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro's Wisdom & Vibes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('https://media1.tenor.com/m/sO_K0lGNmegAAAAd/pedro-pedro-pedro-party-racoon.gif');
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 3px solid #ff6b35;
+        }
+
+        h1 {
+            color: #ff6b35;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .quote-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quote-text {
+            color: #fff;
+            font-size: 1.8em;
+            font-style: italic;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .quote-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        button:hover {
+            background: #e55a2b;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: #ff6b35;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦝 Pedro's Daily Wisdom 🦝</h1>
+        
+        <div class="quote-container" id="quoteContainer">
+            <!-- Content will be loaded here by JavaScript -->
+        </div>
+
+        <button onclick="getRandomContent()">✨ Get Another ✨</button>
+        
+        <div class="footer">
+            <p>🎉 Keep dancing through life like Pedro! 🎉</p>
+        </div>
+    </div>
+
+    <script>
+        const quotes = [
+            "Life is a party, so dance like nobody's watching!",
+            "Keep it groovy and stay positive, my friend.",
+            "Every day is a chance to shine and have fun.",
+            "Don't worry about tomorrow, enjoy today's rhythm.",
+            "Spread good vibes and the world dances with you.",
+            "Life's too short not to party every single day!",
+            "Be yourself, everyone else is already taken.",
+            "Good things come to those who groove.",
+            "The best time to dance is right now!",
+            "Embrace the chaos and make it your beat."
+        ];
+
+        const images = [
+            "https://media1.tenor.com/m/sO_K0lGNmegAAAAd/pedro-pedro-pedro-party-racoon.gif",
+            "https://media1.tenor.com/m/7KqaNeFsUXEAAAAd/trash-panda-raccoon.gif",
+            "https://media1.tenor.com/m/CfH-3K6aEgcAAAAd/raccoon-dancing.gif",
+            "https://media1.tenor.com/m/FRjF9TzVoekAAAAd/raccoon-party.gif",
+            "https://media1.tenor.com/m/RzCyHw0UfPwAAAAd/raccoon-groove.gif"
+        ];
+
+        function getRandomContent() {
+            const isQuote = Math.random() > 0.5;
+            const container = document.getElementById('quoteContainer');
+
+            if (isQuote) {
+                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                container.innerHTML = `<div class="quote-text">"${randomQuote}"</div>`;
+            } else {
+                const randomImage = images[Math.floor(Math.random() * images.length)];
+                container.innerHTML = `<img src="${randomImage}" alt="Dancing Pedro" class="quote-image">`;
+            }
+        }
+
+        // Load random content on page load
+        window.addEventListener('load', getRandomContent);
+    </script>
+</body>
+</html>
